@@ -64,7 +64,8 @@ var config = {
                 target: 'http://localhost:3000',
                 secure: false
             }
-        }
+        },
+        host: '0.0.0.0'
     }
 };
 
