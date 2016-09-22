@@ -1,0 +1,9 @@
+<h2>Hello {{name}}</h2>
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" [ngClass]="{'active': currUrl=='home'}"><a [routerLink]="['home']">Home</a></li>
+        <li role="presentation" [ngClass]="{'active': currUrl=='heroes'}"><a [routerLink]="['heroes']">Heroes</a></li>
+        <li role="presentation" [ngClass]="{'active': currUrl=='about'}"><a [routerLink]="['about']">About</a></li>
+    </ul>
+</div>
+<router-outlet></router-outlet>
