@@ -7,8 +7,8 @@
 
 - npm install 
 
-- suo npm install webpack -g
-
 - npm run server
 
 - npm run client
+
+test url　http://localhost:3001

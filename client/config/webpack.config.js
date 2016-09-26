@@ -52,22 +52,7 @@ var config = {
             minify: false
         }),
         extractCSS
-    ],
-
-    // webpack dev server configuration
-    devServer: {
-        contentBase: "./client/src",
-        noInfo: false,
-        hot: false,
-        proxy: {
-            '/api/*': {
-                target: 'http://localhost:3000',
-                secure: false
-            }
-        },
-        host: '0.0.0.0',
-        port: 3001
-    }
+    ]
 };
 
 if (appEnv === 'development') {
