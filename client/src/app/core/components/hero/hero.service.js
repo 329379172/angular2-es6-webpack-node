@@ -6,7 +6,7 @@ import {Http} from '@angular/http';
 
 
 @Injectable()
-export class HeroListService {
+export class HeroService {
 
     constructor(http:Http) {
         this._http = http;
@@ -14,5 +14,9 @@ export class HeroListService {
 
     getHeroes() {
         return this._http.get('/api/heroes').map(res => res.json()).toPromise();
+    }
+
+    getHeroDetail(id) {
+        return this._http.get(`/api/hero/${id}`).map(res => res.json()).toPromise();
     }
 }

@@ -5,11 +5,12 @@ import {AppComponent} from './components/app/app.component';
 import {HomeComponent} from './components/home/home.component';
 import {HeroListComponent} from './components/hero/hero-list.component';
 import {AboutComponent} from './components/about/about.component';
+import {HeroDetailComponent} from './components/hero/hero-detail.component';
 
-import {HeroListService} from './components/hero/hero-list.service';
+import {HeroService} from './components/hero/hero.service';
 
 
 export {AppComponent};
 
-export const CORE_DECLARATIONS = [HomeComponent, AppComponent, HeroListComponent, AboutComponent];
-export const CORE_PROVIDERS = [HeroListService, AppComponent];
+export const CORE_DECLARATIONS = [HomeComponent, AppComponent, HeroListComponent, AboutComponent, HeroDetailComponent];
+export const CORE_PROVIDERS = [HeroService, AppComponent];

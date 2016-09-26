@@ -3,8 +3,9 @@
  */
 import {Component, NgZone} from '@angular/core';
 import template from './hero-list.template.html';
-import {HeroListService} from './hero-list.service';
+import {HeroService} from './hero.service';
 import {AppComponent} from '../app/app.component';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'hero-list',
@@ -12,11 +13,12 @@ import {AppComponent} from '../app/app.component';
 })
 export class HeroListComponent{
 
-    constructor(heroListService:HeroListService, appComponent: AppComponent, ngZone: NgZone) {
+    constructor(heroService:HeroService, appComponent: AppComponent, ngZone: NgZone, router: Router) {
+        this._router = router;
         this._ngZone = ngZone;
         this.heroes = [];
         appComponent.changeMenu('heroes');
-        this._heroListService = heroListService;
+        this._heroService = heroService;
         console.log('This is HeroListComponent!');
     };
 
@@ -25,9 +27,13 @@ export class HeroListComponent{
     }
 
     async update() {
-        let heroes = await this._heroListService.getHeroes();
+        let heroes = await this._heroService.getHeroes();
         this._ngZone.run(() => {
             this.heroes = heroes;
         });
+    }
+
+    onSelect(hero) {
+        this._router.navigate(['/hero', hero.id]);
     }
 }
